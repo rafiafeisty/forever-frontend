@@ -106,7 +106,13 @@ const Cart = () => {
                         >
                             {/* Image */}
                             <img
-                                src={`data:image/jpeg;base64,${product.image}`}
+                                src={
+                                    product.image.startsWith("http")
+                                        ? product.image // direct URL
+                                        : product.image.startsWith("data:image")
+                                            ? product.image // already base64 formatted
+                                            : `data:image/jpeg;base64,${product.image}`
+                                }
                                 alt={product.name}
                                 className="h-20 w-20 object-cover rounded"
                             />
