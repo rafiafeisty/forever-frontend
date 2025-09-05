@@ -8,7 +8,7 @@ const Order = () => {
 
     const fetching = async () => {
         try {
-            const response = await fetch("http://localhost:5000/auth/orders")
+            const response = await fetch("https://backend-forever-zeta.vercel.app/auth/orders")
             const data = await response.json()
             setOrders(data)
         } catch (err) {
@@ -29,7 +29,7 @@ const Order = () => {
 
 
     const deleteing = async (id) => {
-        const response = await fetch("http://localhost:5000/auth/delorder", {
+        const response = await fetch("https://backend-forever-zeta.vercel.app/auth/delorder", {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ id }),
@@ -86,7 +86,7 @@ const Order = () => {
                                             const newStatus = e.target.value;
 
                                             try {
-                                                const response = await fetch(`http://localhost:5000/auth/updateorder/${order._id}`, {
+                                                const response = await fetch(`https://backend-forever-zeta.vercel.app/auth/updateorder/${order._id}`, {
                                                     method: "PUT",
                                                     headers: { "Content-Type": "application/json" },
                                                     body: JSON.stringify({ status: newStatus }),

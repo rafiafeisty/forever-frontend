@@ -28,7 +28,7 @@ const Detail = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/auth/detail/${id}`);
+        const response = await fetch(`https://backend-forever-zeta.vercel.app/auth/detail/${id}`);
         const data = await response.json();
         setProduct(data);
       } catch (err) {

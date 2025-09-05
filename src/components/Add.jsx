@@ -60,7 +60,7 @@ const Add = () => {
     formData.append("price", price);
 
     try {
-      const response = await fetch("http://localhost:5000/auth/add", {
+      const response = await fetch("https://backend-forever-zeta.vercel.app/auth/add", {
         method: "POST",
         body: formData,
       });

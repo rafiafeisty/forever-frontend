@@ -11,7 +11,7 @@ const Latest = () => {
 
     const fetching = async () => {
         try {
-            const response = await fetch("http://localhost:5000/auth/display")
+            const response = await fetch("https://backend-forever-zeta.vercel.app/auth/display")
             const data = await response.json()
             setItems(data)
         } catch (err) {

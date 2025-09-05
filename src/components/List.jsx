@@ -9,7 +9,7 @@ const List = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await fetch("http://localhost:5000/auth/display");
+        const response = await fetch("https://backend-forever-zeta.vercel.app/auth/display");
         const data = await response.json();
         setItems(data);
       } catch (err) {
@@ -28,7 +28,7 @@ const List = () => {
 
   const deleting = async (id) => {
     try {
-      const response = await fetch("http://localhost:5000/auth/del", {
+      const response = await fetch("https://backend-forever-zeta.vercel.app/auth/del", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id }),

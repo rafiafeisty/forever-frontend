@@ -19,7 +19,7 @@ const Checkout = () => {
             try {
                 const fetched = await Promise.all(
                     orderItems.map(async (item) => {
-                        const res = await fetch(`http://localhost:5000/auth/detail/${item.item_id}`);
+                        const res = await fetch(`https://backend-forever-zeta.vercel.app/auth/detail/${item.item_id}`);
                         const data = await res.json();
                         return {
                             ...data,
@@ -75,7 +75,7 @@ const Checkout = () => {
         };
 
         try {
-            const res = await fetch("http://localhost:5000/auth/order", {
+            const res = await fetch("https://backend-forever-zeta.vercel.app/auth/order", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(orderPayload),

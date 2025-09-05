@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Main from './components/Main'
 import Header from './components/Header'
-import Header2 from './components/Header2'   // 👈 create/import your admin navbar
+import Header2 from './components/Header2'
 import Footer from './components/Footer'
 import Subscribe from './components/Subscribe'
 import Collection from './components/Collection'

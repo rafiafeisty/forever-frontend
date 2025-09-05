@@ -16,7 +16,7 @@ const Cart = () => {
             try {
                 const fetched = await Promise.all(
                     items.map(async (item) => {
-                        const res = await fetch(`http://localhost:5000/auth/detail/${item.item_id}`);
+                        const res = await fetch(`https://backend-forever-zeta.vercel.app/auth/detail/${item.item_id}`);
                         const data = await res.json();
                         return { ...data, size: item.size, quantity: item.quantity || 1 };
                     })
