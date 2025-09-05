@@ -79,7 +79,13 @@ const List = () => {
                 <div className="text-slate-700 font-medium grid grid-cols-5 px-4 py-2 text-center items-center">
                   {/* Image */}
                   <img
-                    src={`data:image/jpeg;base64,${item.image}`}
+                    src={
+              product.image.startsWith("http")
+                ? product.image // direct URL
+                : product.image.startsWith("data:image")
+                  ? product.image // already base64 formatted
+                  : `data:image/jpeg;base64,${product.image}` 
+                    }
                     alt={item.name}
                     className="w-[80px] h-[80px] mx-auto object-cover"
                   />
