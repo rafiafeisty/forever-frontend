@@ -80,11 +80,11 @@ const List = () => {
                   {/* Image */}
                   <img
                     src={
-              product.image.startsWith("http")
-                ? product.image // direct URL
-                : product.image.startsWith("data:image")
-                  ? product.image // already base64 formatted
-                  : `data:image/jpeg;base64,${product.image}` 
+                      item.image.startsWith("http")
+                        ? item.image // direct URL
+                        : item.image.startsWith("data:image")
+                          ? item.image // already base64 formatted
+                          : `data:image/jpeg;base64,${item.image}`
                     }
                     alt={item.name}
                     className="w-[80px] h-[80px] mx-auto object-cover"
